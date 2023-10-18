@@ -1,0 +1,536 @@
+{
+	"info": {
+		"_postman_id": "e50bd7af-cbf9-48c3-8dbb-e8e65b1cdaaf",
+		"name": "Logistica",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"luis@gmail.com\",\r\n    \"password\":\"luis12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8084/api/usuario/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"api",
+						"usuario",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registrar Usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"luis7\",\r\n    \"email\":\"luis@gmail.com\",\r\n    \"password\":\"luis12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8084/api/usuario/registro",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"api",
+						"usuario",
+						"registro"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Guardar Cliente",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2OTc1Nzk5NjYsImV4cCI6MTY5NzU4NzE2NiwiaWQiOjE5LCJlbWFpbCI6Imx1aXNAZ21haWwuY29tIiwidXNlcm5hbWUiOiJsdWlzNyJ9.AbCgI-NUjIJUHU4-ZEAgkv1vqHP4-eacSfwoIVjfLVM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"primerNombre\":\"JOSE\",\r\n    \"segundoNombre\":\"ALBERTO\",\r\n    \"primerApellido\":\"PEREZ\",\r\n    \"segundoApellido\":\"VARGAS\",\r\n    \"numeroDocumento\":\"\",\r\n    \"direccion\":\"AVENIDA OCTAVA\",\r\n    \"celular\":\"3127893215\",\r\n    \"usuarios_id\":19\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8084/api/clientes/guardarCliente/",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"api",
+						"clientes",
+						"guardarCliente",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar Cliente",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2OTc1ODE3NDgsImV4cCI6MTY5NzU4ODk0OCwiaWQiOjE5LCJlbWFpbCI6Imx1aXNAZ21haWwuY29tIiwidXNlcm5hbWUiOiJsdWlzNyJ9.Ss-cZwF-qQRf2IzOLiPsos4g4qZb8aYJyISbrFiwjcY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"primerNombre\":\"LUIS\",\r\n    \"segundoNombre\":\"ANDRES\",\r\n    \"primerApellido\":\"GOMEZ\",\r\n    \"segundoApellido\":\"ALVAREZ\",\r\n    \"numeroDocumento\":\"\",\r\n    \"direccion\":\"AUTOPISTA QUINTA\",\r\n    \"celular\":\"3154672571\",\r\n    \"usuarios_id\":19,\r\n    \"id\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8084/api/clientes/actualizarCliente",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"api",
+						"clientes",
+						"actualizarCliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Cliente",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2OTc1ODUxODUsImV4cCI6MTY5NzU5MjM4NSwiaWQiOjE5LCJlbWFpbCI6Imx1aXNAZ21haWwuY29tIiwidXNlcm5hbWUiOiJsdWlzNyJ9.Q7tT5Tu9xgUc5yR0TldCm9r3IvTWIWND-yix4ruwkvc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"usuarios_id\":19,\r\n    \"id\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8084/api/clientes/eliminarCliente",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"api",
+						"clientes",
+						"eliminarCliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consulta cliente por identificacion",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2OTc1OTQ4MDksImV4cCI6MTY5NzYwMjAwOSwiaWQiOjE5LCJlbWFpbCI6Imx1aXNAZ21haWwuY29tIiwidXNlcm5hbWUiOiJsdWlzNyJ9.BHGPDhrleBdbzWVkCj6abDujjFTEt8t45vPeo3EU-d4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"numDocumento\":\"5682347\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8084/api/clientes/consultaCliente",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"api",
+						"clientes",
+						"consultaCliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consulta envío por numero de guía",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2OTc2NDE5MTUsImV4cCI6MTY5NzY0OTExNSwiaWQiOjE5LCJlbWFpbCI6Imx1aXNAZ21haWwuY29tIiwidXNlcm5hbWUiOiJsdWlzNyJ9.LZR49JVOHbMpKzwUvGn2kIsxYH70MO3cvlIBqDHA248",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"numeroGuia\":\"4H4V7FWP8Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8084/api/logisticaCamiones/consultaEnvioCamion",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"api",
+						"logisticaCamiones",
+						"consultaEnvioCamion"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Guardar registro envío por camión",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2OTc2MDgxMjUsImV4cCI6MTY5NzYxNTMyNSwiaWQiOjE5LCJlbWFpbCI6Imx1aXNAZ21haWwuY29tIiwidXNlcm5hbWUiOiJsdWlzNyJ9.d5buMJzKWN9cRzkKUdppK2TUukxk1x_I5yympoIdaIQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tipoProducto\":\"PRODUCTO\",\r\n    \"fechaRegistro\":\"2023-10-08\",\r\n    \"fechaEntrega\":\"2023-10-14\",\r\n    \"bodegaEntrega\":\"BODEGA\",\r\n    \"placaVehiculo\":\"TCH743\",\r\n    \"clienteId\":5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8084/api/logisticaCamiones/guardarEnvioCamion",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"api",
+						"logisticaCamiones",
+						"guardarEnvioCamion"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar registro envío por camión",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2OTc2MTA5MDQsImV4cCI6MTY5NzYxODEwNCwiaWQiOjE5LCJlbWFpbCI6Imx1aXNAZ21haWwuY29tIiwidXNlcm5hbWUiOiJsdWlzNyJ9.um-xI-eBRfojneAnD01BJB-2ZBJn5xP4zikNOd3d_pE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tipoProducto\":\"PRODUCTO 3\",\r\n    \"fechaRegistro\":\"2023-10-09\",\r\n    \"fechaEnvio\":\"2023-10-15\",\r\n    \"bodegaEntrega\":\"BODEGA 3\",\r\n    \"placaVehiculo\":\"APR650\",\r\n    \"clienteId\":5,\r\n    \"id\":3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8084/api/logisticaCamiones/modificarEnvioCamion",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"api",
+						"logisticaCamiones",
+						"modificarEnvioCamion"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminacion registro envío por camión",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2OTc2MTIzODMsImV4cCI6MTY5NzYxOTU4MywiaWQiOjE5LCJlbWFpbCI6Imx1aXNAZ21haWwuY29tIiwidXNlcm5hbWUiOiJsdWlzNyJ9.0-tFpPa5fxl0e_K246ORUSt9C2MJn_BUmQYcqD7kmhU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"clienteId\":5,\r\n    \"id\":4\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8084/api/logisticaCamiones/eliminacionEnvioCamion",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"api",
+						"logisticaCamiones",
+						"eliminacionEnvioCamion"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Guardar registro envío marítimo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2OTc2NDMwMjQsImV4cCI6MTY5NzY1MDIyNCwiaWQiOjE5LCJlbWFpbCI6Imx1aXNAZ21haWwuY29tIiwidXNlcm5hbWUiOiJsdWlzNyJ9._dvWwHaJ8rRmSucdRP-XAf5baPJ-uYmCNAmFylj5mfY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tipoProducto\":\"PRODUCTO\",\r\n    \"fechaRegistro\":\"2023-10-08\",\r\n    \"fechaEntrega\":\"2023-10-14\",\r\n    \"puertoEntrega\":\"PUERTO\",\r\n    \"numeroFlota\":\"ACG2814S\",\r\n    \"clienteId\":5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8084/api/logisticaMaritima/guardarEnvioMaritimo",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"api",
+						"logisticaMaritima",
+						"guardarEnvioMaritimo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar registro envío marítimo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2OTc2NDQ3NDEsImV4cCI6MTY5NzY1MTk0MSwiaWQiOjE5LCJlbWFpbCI6Imx1aXNAZ21haWwuY29tIiwidXNlcm5hbWUiOiJsdWlzNyJ9.ndHTnjp1aaRWFg_p1L_rUAqEe6pogjJx-te9eSO2hhg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tipoProducto\":\"PRODUCTO 2\",\r\n    \"fechaRegistro\":\"2023-10-09\",\r\n    \"fechaEntrega\":\"2023-10-15\",\r\n    \"puertoEntrega\":\"PUERTO 2\",\r\n    \"numeroFlota\":\"SFT3520V\",\r\n    \"clienteId\":5,\r\n    \"id\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8084/api/logisticaMaritima/modificarEnvioMaritimo",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"api",
+						"logisticaMaritima",
+						"modificarEnvioMaritimo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consulta envío marítimo por numero de guia",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2OTc2NDcxMTAsImV4cCI6MTY5NzY1NDMxMCwiaWQiOjE5LCJlbWFpbCI6Imx1aXNAZ21haWwuY29tIiwidXNlcm5hbWUiOiJsdWlzNyJ9.Vjt9yCT0yxTxJh1VZPM91rf-v_GgbbIBFryqUhqJQ_M",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"numeroGuia\":\"3JDNY7VRJT\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8084/api/logisticaMaritima/consultaEnvioMaritimo",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"api",
+						"logisticaMaritima",
+						"consultaEnvioMaritimo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminación registro por medio marítimo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2OTc2NDc4NTUsImV4cCI6MTY5NzY1NTA1NSwiaWQiOjE5LCJlbWFpbCI6Imx1aXNAZ21haWwuY29tIiwidXNlcm5hbWUiOiJsdWlzNyJ9.g4qG21Nuj_Jk3CVMy321Vv-TzcjnX1tyHTWHkYdziGI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"clienteId\":5,\r\n    \"id\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8084/api/logisticaMaritima/eliminacionEnvioMaritimo",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"api",
+						"logisticaMaritima",
+						"eliminacionEnvioMaritimo"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

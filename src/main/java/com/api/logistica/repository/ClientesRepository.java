@@ -15,9 +15,6 @@ import java.util.Map;
 @Component
 public class ClientesRepository {
 
-    private static final String SQL_UPDATE = "UPDATE CLIENTES SET PRIMERNOMBRE = ?, SEGUNDONOMBRE = ?, PRIMERAPELLIDO = ?, SEGUNDOAPELLIDO = ?, DIRECCION = ?, CELULAR = ? " +
-            "WHERE USUARIOS_ID = ? AND ID = ?";
-
     @Autowired
     private JdbcTemplate jdbcTemplate;
 

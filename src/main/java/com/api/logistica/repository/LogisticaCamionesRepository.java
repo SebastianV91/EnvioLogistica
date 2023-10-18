@@ -20,12 +20,12 @@ public class LogisticaCamionesRepository {
     public int insertEnvioNoGuiaRepository(LogisticaCamiones logisticaCamiones) {
         try {
             String sql = "INSERT INTO LOGISTICACAMIONES"
-                    + " (TIPOPRODUCTO, FECHAREGISTRO, FECHAENVIO, BODEGAENTREGA, PLACAVEHICULO, NUMEROGUIA, CLIENTES_ID) "
+                    + " (TIPOPRODUCTO, FECHAREGISTRO, FECHAENTREGA, BODEGAENTREGA, PLACAVEHICULO, NUMEROGUIA, CLIENTES_ID) "
                     + "VALUES (?, ?, ?, ?, ?, ?, ?) ";
 
             String numGuia = getRandomString(10);
 
-            int rows = jdbcTemplate.update(sql, logisticaCamiones.getTipoProducto(), logisticaCamiones.getFechaRegistro(), logisticaCamiones.getFechaEnvio(), logisticaCamiones.getBodegaEntrega(), logisticaCamiones.getPlacaVehiculo(), numGuia, logisticaCamiones.getClienteId());
+            int rows = jdbcTemplate.update(sql, logisticaCamiones.getTipoProducto(), logisticaCamiones.getFechaRegistro(), logisticaCamiones.getFechaEntrega(), logisticaCamiones.getBodegaEntrega(), logisticaCamiones.getPlacaVehiculo(), numGuia, logisticaCamiones.getClienteId());
 
             return rows;
 
@@ -37,10 +37,10 @@ public class LogisticaCamionesRepository {
     public int updateEnvioNoGuiaRepository(LogisticaCamiones logisticaCamiones){
         try{
             String sql = " UPDATE LOGISTICACAMIONES "
-                    + " SET TIPOPRODUCTO = ?, FECHAREGISTRO = ?, FECHAENVIO = ?, BODEGAENTREGA = ?, PLACAVEHICULO = ?   "
+                    + " SET TIPOPRODUCTO = ?, FECHAREGISTRO = ?, FECHAENTREGA = ?, BODEGAENTREGA = ?, PLACAVEHICULO = ?   "
                     + " WHERE CLIENTES_ID = ? AND ID = ? ";
 
-            int rows = jdbcTemplate.update(sql, logisticaCamiones.getTipoProducto(), logisticaCamiones.getFechaRegistro(), logisticaCamiones.getFechaEnvio(), logisticaCamiones.getBodegaEntrega(), logisticaCamiones.getPlacaVehiculo(), logisticaCamiones.getClienteId(), logisticaCamiones.getId());
+            int rows = jdbcTemplate.update(sql, logisticaCamiones.getTipoProducto(), logisticaCamiones.getFechaRegistro(), logisticaCamiones.getFechaEntrega(), logisticaCamiones.getBodegaEntrega(), logisticaCamiones.getPlacaVehiculo(), logisticaCamiones.getClienteId(), logisticaCamiones.getId());
 
             return rows;
 
@@ -55,7 +55,7 @@ public class LogisticaCamionesRepository {
         List<RegistrosEnvioCamionMapper> listRegistrosEnvioCamion = new ArrayList<>();
 
         String sql = "SELECT  "
-                + " TIPOPRODUCTO, FECHAREGISTRO, FECHAENVIO, BODEGAENTREGA, PLACAVEHICULO, NUMEROGUIA "
+                + " TIPOPRODUCTO, FECHAREGISTRO, FECHAENTREGA, BODEGAENTREGA, PLACAVEHICULO, NUMEROGUIA "
                 + " FROM LOGISTICACAMIONES "
                 + " WHERE NUMEROGUIA = ? ";
 
@@ -67,7 +67,7 @@ public class LogisticaCamionesRepository {
                 RegistrosEnvioCamionMapper registrosEnvioCamionMapper = new RegistrosEnvioCamionMapper();
                 registrosEnvioCamionMapper.setTipoProducto((String) row.get("TIPOPRODUCTO"));
                 registrosEnvioCamionMapper.setFechaRegistro((Date) row.get("FECHAREGISTRO"));
-                registrosEnvioCamionMapper.setFechaEnvio((Date) row.get("FECHAENVIO"));
+                registrosEnvioCamionMapper.setFechaEntrega((Date) row.get("FECHAENTREGA"));
                 registrosEnvioCamionMapper.setBodegaEntrega((String) row.get("BODEGAENTREGA"));
                 registrosEnvioCamionMapper.setPlacaVehiculo((String) row.get("PLACAVEHICULO"));
                 registrosEnvioCamionMapper.setNumeroGuia((String) row.get("NUMEROGUIA"));
@@ -108,15 +108,12 @@ public class LogisticaCamionesRepository {
 
         new Random().nextBytes(bytearray);
 
-        mystring
-                = new String(bytearray, Charset.forName("UTF-8"));
+        mystring = new String(bytearray, Charset.forName("UTF-8"));
 
         thebuffer = new StringBuffer();
 
         //remove all spacial char
-        theAlphaNumericS
-                = mystring
-                .replaceAll("[^A-Z0-9]", "");
+        theAlphaNumericS = mystring.replaceAll("[^A-Z0-9]", "");
 
         //random selection
         for (int m = 0; m < theAlphaNumericS.length(); m++) {

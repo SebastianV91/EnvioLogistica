@@ -2,14 +2,14 @@ package com.api.logistica.model;
 
 import java.util.Date;
 
-public class LogisticaCamiones {
+public class LogisticaMaritima {
 
     private Integer id;
     private String tipoProducto;
     private Date fechaRegistro;
     private Date fechaEntrega;
-    private String bodegaEntrega;
-    private String placaVehiculo;
+    private String puertoEntrega;
+    private String numeroFlota;
     private String numeroGuia;
     private Integer clienteId;
 
@@ -45,20 +45,20 @@ public class LogisticaCamiones {
         this.fechaEntrega = fechaEntrega;
     }
 
-    public String getBodegaEntrega() {
-        return bodegaEntrega;
+    public String getPuertoEntrega() {
+        return puertoEntrega;
     }
 
-    public void setBodegaEntrega(String bodegaEntrega) {
-        this.bodegaEntrega = bodegaEntrega;
+    public void setPuertoEntrega(String puertoEntrega) {
+        this.puertoEntrega = puertoEntrega;
     }
 
-    public String getPlacaVehiculo() {
-        return placaVehiculo;
+    public String getNumeroFlota() {
+        return numeroFlota;
     }
 
-    public void setPlacaVehiculo(String placaVehiculo) {
-        this.placaVehiculo = placaVehiculo;
+    public void setNumeroFlota(String numeroFlota) {
+        this.numeroFlota = numeroFlota;
     }
 
     public String getNumeroGuia() {
@@ -76,5 +76,4 @@ public class LogisticaCamiones {
     public void setClienteId(Integer clienteId) {
         this.clienteId = clienteId;
     }
-
 }

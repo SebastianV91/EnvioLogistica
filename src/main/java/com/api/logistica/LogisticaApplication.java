@@ -36,6 +36,7 @@ public class LogisticaApplication {
 		registrationBean.setFilter(authFilter);
 		registrationBean.addUrlPatterns("/api/clientes/*");
 		registrationBean.addUrlPatterns("/api/logisticaCamiones/*");
+		registrationBean.addUrlPatterns("/api/logisticaMaritima/*");
 		return registrationBean;
 	}
 

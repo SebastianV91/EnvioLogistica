@@ -6,7 +6,7 @@ public class RegistrosEnvioCamionMapper {
 
     private String tipoProducto;
     private Date fechaRegistro;
-    private Date fechaEnvio;
+    private Date fechaEntrega;
     private String bodegaEntrega;
     private String placaVehiculo;
     private String numeroGuia;
@@ -27,12 +27,12 @@ public class RegistrosEnvioCamionMapper {
         this.fechaRegistro = fechaRegistro;
     }
 
-    public Date getFechaEnvio() {
-        return fechaEnvio;
+    public Date getFechaEntrega() {
+        return fechaEntrega;
     }
 
-    public void setFechaEnvio(Date fechaEnvio) {
-        this.fechaEnvio = fechaEnvio;
+    public void setFechaEntrega(Date fechaEntrega) {
+        this.fechaEntrega = fechaEntrega;
     }
 
     public String getBodegaEntrega() {

@@ -1,25 +1,15 @@
-package com.api.logistica.model;
+package com.api.logistica.mapper;
 
 import java.util.Date;
 
-public class LogisticaCamiones {
+public class RegistroLogisticaMaritimaMapper {
 
-    private Integer id;
     private String tipoProducto;
     private Date fechaRegistro;
     private Date fechaEntrega;
-    private String bodegaEntrega;
-    private String placaVehiculo;
+    private String puertoEntrega;
+    private String numeroFlota;
     private String numeroGuia;
-    private Integer clienteId;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public String getTipoProducto() {
         return tipoProducto;
@@ -45,20 +35,20 @@ public class LogisticaCamiones {
         this.fechaEntrega = fechaEntrega;
     }
 
-    public String getBodegaEntrega() {
-        return bodegaEntrega;
+    public String getPuertoEntrega() {
+        return puertoEntrega;
     }
 
-    public void setBodegaEntrega(String bodegaEntrega) {
-        this.bodegaEntrega = bodegaEntrega;
+    public void setPuertoEntrega(String puertoEntrega) {
+        this.puertoEntrega = puertoEntrega;
     }
 
-    public String getPlacaVehiculo() {
-        return placaVehiculo;
+    public String getNumeroFlota() {
+        return numeroFlota;
     }
 
-    public void setPlacaVehiculo(String placaVehiculo) {
-        this.placaVehiculo = placaVehiculo;
+    public void setNumeroFlota(String numeroFlota) {
+        this.numeroFlota = numeroFlota;
     }
 
     public String getNumeroGuia() {
@@ -68,13 +58,4 @@ public class LogisticaCamiones {
     public void setNumeroGuia(String numeroGuia) {
         this.numeroGuia = numeroGuia;
     }
-
-    public Integer getClienteId() {
-        return clienteId;
-    }
-
-    public void setClienteId(Integer clienteId) {
-        this.clienteId = clienteId;
-    }
-
 }

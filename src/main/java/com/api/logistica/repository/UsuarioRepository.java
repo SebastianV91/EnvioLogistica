@@ -20,28 +20,24 @@ public class UsuarioRepository {
     private static final String SQL_CREATE = "INSERT INTO USUARIOS (USERNAME, EMAIL, PASSWORD) VALUES (?, ?, ?)";
     private static final String SQL_COUNT_BY_EMAIL = "SELECT COUNT(*) FROM USUARIOS WHERE EMAIL = ?";
     private static final String SQL_FIND_BY_ID = "SELECT ID, USERNAME, EMAIL, PASSWORD FROM USUARIOS" +
-            "WHERE ID = ?";
+            " WHERE ID = ?";
     private static final String SQL_FIND_BY_EMAIL = "SELECT ID, USERNAME, EMAIL, PASSWORD FROM USUARIOS" +
-            "WHERE EMAIL = ? AND PASSWORD = ?";
+            " WHERE EMAIL = ?";
 
     @Autowired
     JdbcTemplate jdbcTemplate;
 
-    public Integer create(String username, String email, String password) {
+    public Integer create(String username, String email, String password) throws EtAuthException {
+        try{
         String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt(10));
-        try {
-            KeyHolder keyHolder = new GeneratedKeyHolder();
-            jdbcTemplate.update(connection -> {
-                PreparedStatement ps = connection.prepareStatement(SQL_CREATE, Statement.RETURN_GENERATED_KEYS);
-                ps.setString(1, username);
-                ps.setString(2, email);
-                ps.setString(3, password);
-                return ps;
-            }, keyHolder);
-            return (Integer) keyHolder.getKeys().get("ID");
-        } catch (Exception e) {
-            throw e;
+
+        int rows = jdbcTemplate.update(SQL_CREATE, username, email, hashedPassword);
+
+        return rows;
+        } catch(Exception e){
+            throw new EtAuthException("Detalles Invalidos. Fallido a crear cuenta");
         }
+
     }
 
     public Usuario findByEmailAndPassword(String email, String password) throws EtAuthException {
